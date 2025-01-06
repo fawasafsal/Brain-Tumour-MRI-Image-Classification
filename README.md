@@ -69,7 +69,7 @@ Using Convolutional Neural Networks (CNNs) and transfer learning architectures s
 5. Monitor training and evaluation outputs.
 
 ## 📌 **Key Results**
-- The CNN, ResNet50, and VGG19 models achieved high accuracy on the test dataset.
+- The VGG19 model has achieved high accuracy.
 - Confusion matrices and classification reports showcase the performance.
 
 ## 🚀 **Inference on Custom Images**
