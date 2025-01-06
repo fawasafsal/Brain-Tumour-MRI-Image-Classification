@@ -21,7 +21,7 @@ Using Convolutional Neural Networks (CNNs) and transfer learning architectures s
 - **NumPy**
 - **Google Colab**
 
-## 📂**Dataset**
+## **Dataset**
 - The dataset contains MRI images categorized into four classes.
 - Images are sourced from a ZIP file and extracted into a structured dataset.
 - **Classes:**
