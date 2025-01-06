@@ -82,12 +82,7 @@ Using Convolutional Neural Networks (CNNs) and transfer learning architectures s
 - Experiment with advanced image augmentation techniques.
 - Deploy the model using **Flask** or **Streamlit** for real-world use.
 
-## 🤝 **Contributors**
-- [Your Name]
-
 ## 📜 **License**
 This project is licensed under the **MIT License**.
 
----
-*For any queries, feel free to open an issue or contact me directly.*
 
