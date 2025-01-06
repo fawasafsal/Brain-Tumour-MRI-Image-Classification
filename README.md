@@ -1,7 +1,6 @@
-# Brain-Tumour-MRI-Image-Classification
 # Brain Tumour MRI Classification
 
-## 📚 **Project Overview**
+##  **Project Overview**
 This project focuses on the classification of brain MRI images into four categories:
 - **No Tumor**
 - **Glioma Tumor**
@@ -10,7 +9,7 @@ This project focuses on the classification of brain MRI images into four categor
 
 Using Convolutional Neural Networks (CNNs) and transfer learning architectures such as **ResNet50** and **VGG19**, the project aims to provide accurate predictions for MRI scans.
 
-## 🛠️ **Technologies Used**
+##  **Technologies Used**
 - **Python**
 - **TensorFlow**
 - **Keras**
@@ -20,8 +19,9 @@ Using Convolutional Neural Networks (CNNs) and transfer learning architectures s
 - **scikit-learn**
 - **Pandas**
 - **NumPy**
+- **Google Colab**
 
-## 📂 **Dataset**
+## 📂**Dataset**
 - The dataset contains MRI images categorized into four classes.
 - Images are sourced from a ZIP file and extracted into a structured dataset.
 - **Classes:**
@@ -29,60 +29,102 @@ Using Convolutional Neural Networks (CNNs) and transfer learning architectures s
   - `glioma_tumor`
   - `meningioma_tumor`
   - `pituitary_tumor`
+- Images are split into **training**, **testing**, and **validation** sets.
+- The dataset structure follows the pattern:
+  ```
+  Brain_tumor_dataset/
+    ├── training/
+    │   ├── glioma_tumor/
+    │   ├── meningioma_tumor/
+    │   ├── no_tumor/
+    │   ├── pituitary_tumor/
+    ├── testing/
+    │   ├── glioma_tumor/
+    │   ├── meningioma_tumor/
+    │   ├── no_tumor/
+    │   ├── pituitary_tumor/
+  ```
 
-## 📊 **Data Preprocessing**
+##  **Data Preprocessing**
 - Images are resized to **256x256 pixels**.
 - Normalized pixel values between **0 and 1**.
-- Data augmentation is applied to improve model performance.
+- Applied **Data Augmentation:**
+  - Horizontal Flip
+  - Vertical Flip
+  - Rotation
+  - Zoom
 - Dataset split:
   - **Training (60%)**
-  - **Testing (40%)**
-  - Further divided into training, validation, and test subsets.
+  - **Validation (20%)**
+  - **Testing (20%)**
 
-## 🧠 **Model Architectures**
-1. **Custom CNN Model:** A multi-layer convolutional neural network with dropout and batch normalization.
-2. **Hyperparameter Tuned CNN:** Optimized CNN with adjusted dropout rates and batch normalization.
-3. **ResNet50:** Transfer learning model pre-trained on ImageNet.
-4. **VGG19:** Another transfer learning model with pre-trained weights.
+##  **Model Architectures**
+### 1. **Custom CNN Model:**
+- 4 Convolutional layers
+- MaxPooling layers
+- Dropout layers to prevent overfitting
+- Fully connected Dense layers
 
-## 🏋️‍♀️ **Training and Evaluation**
+### 2. **Hyperparameter Tuned CNN:**
+- Optimized dropout rates
+- Batch normalization
+- Tuned learning rate (0.0005)
+
+### 3. **ResNet50:**
+- Pre-trained on **ImageNet**
+- Feature extraction with frozen convolutional layers
+- Fully connected Dense layers
+
+### 4. **VGG19:**
+- Pre-trained on **ImageNet**
+- Fully connected Dense layers for classification
+
+##  **Training and Evaluation**
 - **Loss Function:** Categorical Crossentropy
-- **Optimizer:** Adam with tuned learning rates.
+- **Optimizer:** Adam (Learning Rates: 0.001, 0.0005, 0.0001)
 - **Metrics:**
   - Accuracy
+  - Validation Accuracy
   - Confusion Matrix
   - Classification Report
+- Models trained with **early stopping** and **learning rate scheduling**.
 
-## 📈 **Results Visualization**
-- Training and validation accuracy/loss graphs.
-- Confusion matrices for training and test datasets.
-- Classification reports with precision, recall, and F1 scores.
+##  **Results Visualization**
+- Training and Validation **Accuracy/Loss Graphs**.
+- **Confusion Matrices** for training and test datasets.
+- **Classification Reports** with:
+  - Precision
+  - Recall
+  - F1 Score
 
-## 🔄 **How to Run the Project**
+##  **Inference on Custom Images**
+1. Provide a sample MRI image.
+2. The image is preprocessed (resized and normalized).
+3. The model predicts the tumor category with **confidence scores**.
+4. The result is displayed with the MRI image and prediction details.
+
+##  **How to Run the Project**
 1. Clone the repository:
    ```bash
    git clone <repo-link>
    ```
-2. Upload the dataset ZIP file to Google Drive.
-3. Update the `zip_path` variable in the script with the dataset path.
-4. Run the notebook in Google Colab.
+2. Upload the dataset ZIP file to **Google Drive**.
+3. Update the `zip_path` variable in the script.
+4. Run the script in **Google Colab**.
 5. Monitor training and evaluation outputs.
+6. Perform inference on custom images.
 
-## 📌 **Key Results**
-- The VGG19 model has achieved high accuracy.
-- Confusion matrices and classification reports showcase the performance.
+##  **Key Results**
+- **Custom CNN Model:** Achieved consistent accuracy across training and testing datasets.
+- **ResNet50 Model:** Effective for feature extraction with pre-trained weights.
+- **VGG19 Model:** Balanced accuracy and computational efficiency.
+- **Evaluation Metrics:** High precision, recall, and F1 scores across all classes.
 
-## 🚀 **Inference on Custom Images**
-- Provide a sample MRI image.
-- The model predicts the tumor category with confidence scores.
-- Results are displayed with the MRI image.
-
-## 📑 **Future Improvements**
-- Integrate **EfficientNet** for better accuracy.
-- Experiment with advanced image augmentation techniques.
-- Deploy the model using **Flask** or **Streamlit** for real-world use.
-
+##  **Future Improvements**
+- **Integrate EfficientNet** for better accuracy.
+- **Enhance Data Augmentation Techniques**.
+- **Real-time Predictions:** Integrate with a real-time MRI scan system.
+- 
 ## 📜 **License**
 This project is licensed under the **MIT License**.
-
 
