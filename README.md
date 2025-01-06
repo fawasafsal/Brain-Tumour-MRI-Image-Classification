@@ -124,7 +124,7 @@ Using Convolutional Neural Networks (CNNs) and transfer learning architectures s
 - **Integrate EfficientNet** for better accuracy.
 - **Enhance Data Augmentation Techniques**.
 - **Real-time Predictions:** Integrate with a real-time MRI scan system.
-- 
+  
 ##  **License**
 This project is licensed under the **MIT License**.
 
